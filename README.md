@@ -15,6 +15,7 @@ Clone the repository and create a directory for the log files of the condor jobs
 ```
 cd CMSSW_10_2_10/src/HiggsAnalysis/CombinedLimit/test/
 git clone https://github.com/gvonsem/BiasTests.git
+cd BiasTests
 mkdir HTcondorLogs
 ```
 
