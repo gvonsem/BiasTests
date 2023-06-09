@@ -27,7 +27,7 @@ The modes are:
 - toysCLs: full CLs toys for limit calculation (using HybridNew)
 - toysSignificance: full CLs toys for significance calculation (using HybridNew)
 The mode determines the Combine command that will be run on the condor node.
-This `submit_parallel_HTcondor.sh` script creates jobs that will run (on condor) a script that is a modified version of the `Job_base.sh` template script.
+This `submit_parallel_HTcondor.sh` script creates jobs that will run (on condor) a script that is a modified version of the `Job_base.sh` template script. It will also create a modified version of the template condor job configuration script `submit_parallel.sub`. In `submit_parallel_HTcondor.sh`, don't forget to also choose the appropriate Condor queue (short or long jobs, to be decided based on trial and error).
 
 To know which signal strenghts are relevant to inject (e.g. 2 or 5 standard deviations), one can first determine the significances. Therefore one has to perform a first scan of the injected signal strength and calculated the corresponding significances. Modify `submit_parallel_HTcondor.sh` for the Significance mode and run:
 ```
@@ -43,6 +43,15 @@ There is an example plotting script to plot the significance as a function of th
 root -l plotSignificance.C
 ```
 
+Once the signal strenghts corresponding to 2 and 5 standard deviations have been determined, you can run the actual signal injection toys via the mode FitDiagnostics, so again modifying the script and running:
+```
+./submit_parallel_HTcondor.sh
+```
+
+When the results are ready and again merged via hadd, another script can be used to plot the distribution of fitted signal strength to see if there is any significant bias. 
+```
+root -l plotBias.C
+```
 
 
 
