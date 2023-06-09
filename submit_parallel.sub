@@ -1,0 +1,23 @@
+Job_Proc_ID = $(Process) + 1
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files = ""
+batch_name = SUBNAME
+executable  = SUBBASESCRIPT
+arguments             = $(ClusterID) $(ProcId)
+environment = "JOB_PROC_ID=$INT(Job_Proc_ID)"
+
+output                = HTcondorLogs/SUBNAME/job.$(ClusterId).$INT(Job_Proc_ID).out
+error                 = HTcondorLogs/SUBNAME/job.$(ClusterId).$INT(Job_Proc_ID).err
+log                   = HTcondorLogs/SUBNAME/job.$(ClusterId).$INT(Job_Proc_ID).log
+
+#+JobFlavour           = "microcentury"
+#+JobFlavour           = "longlunch"
+#+JobFlavour           = "workday"
+#+JobFlavour           = "tomorrow"
+#+JobFlavour           = "nextweek"
+#+JobFlavour           = "espresso"
++JobFlavour           = "SUBJOBFLAVOUR"
+queue SUBQUEUE
+#queue 
