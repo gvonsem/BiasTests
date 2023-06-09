@@ -1,6 +1,5 @@
 
 NJOBS=300
-#NJOBS=2
 
 for IJOBID in `seq 1 ${NJOBS}`; do
 
