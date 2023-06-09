@@ -53,9 +53,9 @@ When the results are ready and again merged via hadd, another script can be used
 root -l plotBias.C
 ```
 
-**Note**: there are a few additional helper scripts:
-- it may happen that some fits of toys fail. To get rid of such toys, there is a script that can be configured and run `./removeBadFitsToys.sh`.
-- the output toy root files may have problems when merging because of additional file content that is not mergable. Normally this content is already remvoved (see the rootrm comands in `Job_base.sh`). If this is not done, it can be redone on the fly using the script `retainTrees.sh` before hadding.
+**Note**: there are a few additional helper scripts.
+- It may happen that some fits of toys fail. To get rid of such toys, there is a script that can be configured and run `./removeBadFitsToys.sh`.
+- The output toy root files may have problems when merging because of additional file content that is not mergable. Normally this content is already remvoved (see the rootrm comands in `Job_base.sh`). If this is not done, it can be redone on the fly using the script `retainTrees.sh` before hadding.
 
 
 
